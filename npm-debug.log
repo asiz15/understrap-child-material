@@ -1,0 +1,134 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/koenemann/understrap-child',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/koenemann/.npm/understrap-child/0.3.5/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/koenemann/.npm correctMkdir not in flight; initializing
+10 info lifecycle understrap-child@0.3.5~prepublish: understrap-child@0.3.5
+11 silly lifecycle understrap-child@0.3.5~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/koenemann/.npm/understrap-child/0.3.5/package.tgz',
+12 verbose tar pack   '/Users/koenemann/understrap-child' ]
+13 verbose tarball /Users/koenemann/.npm/understrap-child/0.3.5/package.tgz
+14 verbose folder /Users/koenemann/understrap-child
+15 verbose addLocalTarball adding from inside cache /Users/koenemann/.npm/understrap-child/0.3.5/package.tgz
+16 verbose correctMkdir /Users/koenemann/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd understrap-child@0.3.5
+18 verbose afterAdd /Users/koenemann/.npm/understrap-child/0.3.5/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/koenemann/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/koenemann/.npm/understrap-child/0.3.5/package/package.json written
+21 silly publish { name: 'understrap-child',
+21 silly publish   version: '0.3.5',
+21 silly publish   description: 'Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { postinstall: 'gulp copy-assets' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/holger1411/understrap-child.git' },
+21 silly publish   keywords: [ 'wordpress', 'theme', 'framework', 'bootstrap', 'underscores' ],
+21 silly publish   author: { name: 'Holger Koenemann' },
+21 silly publish   license: 'GPL-2.0',
+21 silly publish   bugs: { url: 'https://github.com/holger1411/understrap-child/issues' },
+21 silly publish   homepage: 'https://understrap.com',
+21 silly publish   dependencies:
+21 silly publish    { bootstrap: '4.0.0-beta',
+21 silly publish      'browser-sync': '^2.18.12',
+21 silly publish      del: '^3.0.0',
+21 silly publish      'font-awesome': '^4.7.0',
+21 silly publish      gulp: '^3.9.1',
+21 silly publish      'gulp-clean-css': '^3.7.0',
+21 silly publish      'gulp-clone': '^1.0.0',
+21 silly publish      'gulp-concat': '^2.6.1',
+21 silly publish      'gulp-cssnano': '^2.1.2',
+21 silly publish      'gulp-ignore': '^2.0.2',
+21 silly publish      'gulp-imagemin': '^3.3.0',
+21 silly publish      'gulp-merge': '^0.1.1',
+21 silly publish      'gulp-plumber': '^1.1.0',
+21 silly publish      'gulp-rename': '^1.2.2',
+21 silly publish      'gulp-rimraf': '^0.2.1',
+21 silly publish      'gulp-sass': '^3.1.0',
+21 silly publish      'gulp-sequence': '^0.4.6',
+21 silly publish      'gulp-sourcemaps': '2.6.0',
+21 silly publish      'gulp-uglify': '^3.0.0',
+21 silly publish      'gulp-watch': '^4.3.11',
+21 silly publish      jquery: '3.2.1',
+21 silly publish      merge2: '^1.1.0',
+21 silly publish      'popper.js': '^1.11.1',
+21 silly publish      'run-sequence': '^2.0.0',
+21 silly publish      'undescores-for-npm': '^1.0.0',
+21 silly publish      understrap: '^0.6.5' },
+21 silly publish   readme: '# understrap-child\nBasic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap\n\n## How it works\nIt shares with the parent theme all PHP files and adds its own functions.php on top of the UnderStrap parent themes functions.php.\n\nIT DID NOT LOAD THE PARENT THEMES CSS FILE(S)!\nInstead it uses the UnderStrap Parent Theme as dependency via npm and compiles its own CSS file from it.\n\nUses the Enqueue method the load and sort the CSS file the right way instead of the old @import method.\n\n## Installation\n1. Install the parent theme UnderStrap first: https://github.com/holger1411/understrap\n- IMPORTANT: If you download it from GitHub make sure you rename the "understrap-master.zip" file just to "understrap.zip" or you might have problems using this child themes !!\n\n2. Just upload the understrap-child folder to your wp-content/themes directory\n3. Go into your WP admin backend \n4. Go to "Appearance -> Themes"\n5. Activate the UnderStrap Child theme\n\n## Editing\nAdd your own CSS styles to /sass/theme/_child_theme.scss\nor import you own files into /sass/theme/understrap-child.scss\n\nTo overwrite Bootstrap or UnderStraps base variables just add your own value to:\n/sass/theme/_child_theme_variables.scss\n\nFor example:\nthe "$brand-primary" variable is used by both, Bootstrap and UnderStrap.\nAdd your own color like:\n$brand-primary: #ff6600;\nin /sass/theme/_child_theme_variables.scss to overwrite it.\nThat will change automatically all elements who use this variable.\nIt will be outputted into:\n/css/understrap-child.min.css\nand\n/css/understrap-child.css\n\nSo you have one clean CSS file at the end and just one request.\n\n## Developing With NPM, Gulp, SASS and Browser Sync\n\n### Installing Dependencies\n- Make sure you have installed Node.js, Gulp, and Browser-Sync [1] on your computer globally\n- Then open your terminal and browse to the location of your UnderStrap copy\n- Run: `$ npm install` then: `$ gulp copy-assets`\n\n### Running\nTo work and compile your Sass files on the fly start:\n\n- `$ gulp watch`\n\nOr, to run with Browser-Sync:\n\n- First change the browser-sync options to reflect your environment in the file `/gulpfile.js` in the beginning of the file:\n```javascript\nvar browserSyncOptions = {\n    proxy: "localhost/theme_test/", // <----- CHANGE HERE\n    notify: false\n};\n```\n- then run: `$ gulp watch-bs`\n\n[1] Visit [http://browsersync.io](http://browsersync.io) for more information on Browser Sync\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '96ff2d4da07a2337196baad269c1a438eae80d97',
+21 silly publish   _id: 'understrap-child@0.3.5',
+21 silly publish   _shasum: '07e653c404661b81090935f49d531304c7676a3a',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name understrap-child
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'understrap-child',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'understrap-child',
+26 silly mapToRegistry   name: 'understrap-child',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/understrap-child
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/koenemann/.npm/understrap-child/0.3.5/package.tgz
+30 verbose request uri https://registry.npmjs.org/understrap-child
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 14:29:43
+33 verbose request using bearer token for auth
+34 verbose request id d2fede12605373bc
+35 http request PUT https://registry.npmjs.org/understrap-child
+36 http 403 https://registry.npmjs.org/understrap-child
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Thu, 17 Aug 2017 12:29:45 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-ams4127-AMS',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1502972983.376488,VS0,VE2398',
+37 verbose headers   vary: 'Accept-Encoding, Accept' }
+38 verbose request invalidating /Users/koenemann/.npm/registry.npmjs.org/understrap-child on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.3.5." : understrap-child
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+41 verbose statusCode 403
+42 verbose pkgid understrap-child
+43 verbose cwd /Users/koenemann/understrap-child
+44 error Darwin 16.7.0
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.11.1
+47 error npm  v3.10.10
+48 error code E403
+49 error "You cannot publish over the previously published version 0.3.5." : understrap-child
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
